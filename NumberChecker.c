@@ -1,15 +1,21 @@
 #include <stdio.h>
+#include <string.h>
 
 int main()
 {
     int GameContinue = 1;
     int counter = 0;
+    int size = 0;
     char* myNum;
     char* Guess;
-    printf("Enter your number: ");
+    printf("Enter your phrase: ");
     scanf("%s", myNum);
 
-    printf("Your number is %s\n", myNum);
+    printf("Your phrase is %s\n", myNum);
+
+    while (myNum[size] != '\0') {
+        size++;
+    }
 
     while(GameContinue)
     {
@@ -17,13 +23,13 @@ int main()
         scanf("%s", Guess);
 
         counter = 0;
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < size; i++)
         {
             if (myNum[i] == Guess[i]) counter++;
 
         }
-        if (counter >= 4) GameContinue = 0;
-        printf("\nThe correct guesses over: %d\n", counter);
+        if (counter >= size) GameContinue = 0;
+        printf("The correct positions are: %d\n", counter);
     }
 
     // Game Over
