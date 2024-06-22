@@ -1,16 +1,19 @@
 #include <stdio.h>
 #include <string.h>
 
+#define MAX_LENGTH 30
+
 int main()
 {
     int GameContinue = 1;
     int counter = 0;
     int size = 0;
-    char* myNum;
-    char* Guess;
+
+    char myNum[MAX_LENGTH];
+    char Guess[MAX_LENGTH];
+
     printf("Enter your phrase: ");
     scanf("%s", myNum);
-
     printf("Your phrase is %s\n", myNum);
 
     while (myNum[size] != '\0') {
